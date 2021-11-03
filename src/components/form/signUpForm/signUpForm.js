@@ -1,86 +1,126 @@
 import React from 'react'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import s from '../form.module.css'
+import Title from '../../title'
 
 const SignUpForm = () => {
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPass: '',
+    },
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+        .max(15, 'Must be 15 characters or less')
+        .required('Required'),
+      lastName: Yup.string()
+        .max(20, 'Must be 20 characters or less')
+        .required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
+    }),
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2))
+    },
+  })
+
+  const errorText =
+    formik.touched.firstName && formik.errors.firstName ? (
+      <p className={s.text_error}>{formik.errors.firstName}</p>
+    ) : null
+
   return (
-    <div>
-      <form class="form">
+    <>
+      <form onSubmit={formik.handleSubmit} className={s.form}>
+        <Title text="Sign Up" />
+
         <div>
-          <div class="form__input__wrapper">
+          <div className={s.wrapper}>
+            <label htmlFor="firstName">First Name</label>
             <input
-              class="form__input"
+              className={s.input}
+              id="firstName"
+              name="firstName"
               type="text"
               placeholder="First Name"
-              id="name"
-              autocomplete="on"
-              required
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.firstName}
             />
-            <p class="error-message__name"></p>
+            {errorText}
           </div>
-          <div class="form__input__wrapper">
+
+          <div className={s.wrapper}>
+            <label htmlFor="lastName">Last Name</label>
             <input
-              class="form__input"
+              className={s.input}
+              id="lastName"
+              name="lastName"
               type="text"
               placeholder="Last Name"
-              id="surname"
-              autocomplete="on"
-              required
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.lastName}
             />
-            <p class="error-message__surname"></p>
+            {errorText}
           </div>
-          <div class="form__input__wrapper">
+
+          <div className={s.wrapper}>
             <input
-              class="form__input"
+              className={s.input}
+              id="email"
+              name="email"
               type="email"
               placeholder="Email"
-              id="email"
-              autocomplete="on"
-              required
+              onChange={formik.handleChange}
+              value={formik.values.email}
             />
-            <p class="error-message__email"></p>
           </div>
-          <div class="form__input__wrapper">
+
+          <div className={s.wrapper}>
             <input
-              class="form__input"
+              className={s.input}
+              id="password"
+              name="password"
               type="password"
               placeholder="Password"
-              title="Password must contain minimum eight characters, at least one letter and one number"
-              id="password"
-              autocomplete="on"
-              required
+              onChange={formik.handleChange}
+              value={formik.values.password}
             />
-            <div class="input__svg input__svg_close"></div>
-            <p class="error-message__password"></p>
+
+            <div className={`${s.svg} ${s.svg_close}`}></div>
           </div>
-          <div class="form__input__wrapper">
+
+          <div className={s.wrapper}>
             <input
-              class="form__input"
+              className={s.input}
+              id="confirmPass"
+              name="confirmPass"
               type="password"
               placeholder="Confirm Password"
-              id="confirmPass"
-              autocomplete="on"
-              required
+              onChange={formik.handleChange}
+              value={formik.values.confirmPass}
             />
-            <div class="input__svg input__svg_close"></div>
-            <p class="error-message__confirmPass"></p>
+
+            <div className={`${s.svg} ${s.svg_close}`}></div>
+          </div>
+
+          <button className={s.button} type="submit">
+            Submit
+          </button>
+
+          <div className={s.text_wrapper}>
+            <p className={s.text}>Already have an account?</p>
+            <a className={s.link} href="#" data-name="/signin">
+              Sign in
+            </a>
           </div>
         </div>
-
-        <button
-          class="form__button form__button_register"
-          type="submit"
-          data-name="/doctor"
-        >
-          Sign up
-        </button>
-
-        <div class="form__textwrapper">
-          <p class="form__text">Already have an account?</p>
-          <a class="form__link" href="#" data-name="/signin">
-            Sign in
-          </a>
-        </div>
       </form>
-    </div>
+    </>
   )
 }
 
