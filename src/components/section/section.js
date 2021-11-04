@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import s from './section.module.css'
 
 const Section = ({ children }) => {
-  return <section class={s.section}>{children}</section>
+  return <section className={s.section}>{children}</section>
 }
 
 Section.propTypes = {

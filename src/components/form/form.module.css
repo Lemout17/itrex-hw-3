@@ -90,6 +90,10 @@
   background-image: url('../../svg/eye-blocked.svg');
 }
 
+.input_error {
+  outline: 1px solid var(--input-error);
+}
+
 .text_error {
   margin-top: 8px;
   margin-bottom: 24px;
