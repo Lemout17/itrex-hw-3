@@ -1,10 +1,14 @@
-import React from 'react'
+import Main from '../../components/containers/main'
+import Section from '../../components/containers/section'
+import ConfirmFrom from '../../components/form/confirmForm'
 
 const ConfirmView = () => {
   return (
-    <div>
-      <h1>Confirm VIew</h1>
-    </div>
+    <Main>
+      <Section>
+        <ConfirmFrom />
+      </Section>
+    </Main>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Main from '../../components/main'
-import Section from '../../components/section'
+import Main from '../../components/containers/main'
+import Section from '../../components/containers/section'
 import SignUpForm from '../../components/form/signUpForm'
 
 const SignUpView = () => {

@@ -1,8 +1,8 @@
 export default {
   signupPage: '/',
   signinPage: '/signin',
-  restore: '/restore',
-  confirm: '/confirm',
+  restorePage: '/restore',
+  confirmPage: '/confirm',
   doctorPage: '/doctor',
   userPage: '/user',
 }

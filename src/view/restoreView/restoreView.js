@@ -1,10 +1,14 @@
-import React from 'react'
+import Main from '../../components/containers/main'
+import Section from '../../components/containers/section'
+import RestoreForm from '../../components/form/restoreForm'
 
 const RestoreView = () => {
   return (
-    <div>
-      <h1>Restore View</h1>
-    </div>
+    <Main>
+      <Section>
+        <RestoreForm />
+      </Section>
+    </Main>
   )
 }
 

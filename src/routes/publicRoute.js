@@ -24,10 +24,11 @@ export default function PublicRoute({
 
 PublicRoute.defaultProps = {
   isAuthenticated: false,
+  children: null,
 }
 
 PublicRoute.propTypes = {
   isAuthenticated: PropTypes.bool,
   redirectTo: PropTypes.string.isRequired,
-  children: PropTypes.shape().isRequired,
+  children: PropTypes.shape(),
 }

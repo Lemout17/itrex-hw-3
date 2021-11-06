@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 import routes from './routes/routes'
 
 import PublicRoute from './routes/publicRoute'
@@ -17,6 +17,14 @@ const SignUpView = lazy(() =>
 
 const SignInView = lazy(() =>
   import('./view/signInView' /* webpackChunkName: "signin-page" */)
+)
+
+const RestoreView = lazy(() =>
+  import('./view/restoreView' /* webpackChunkName: "restore-page" */)
+)
+
+const ConfirmView = lazy(() =>
+  import('./view/confirmView' /* webpackChunkName: "confirm-page" */)
 )
 
 const DoctorView = lazy(() =>
@@ -40,6 +48,18 @@ function App() {
             restricted
             redirectTo={routes.doctorPage}
             component={SignInView}
+          />
+          <PublicRoute
+            path={routes.restorePage}
+            restricted
+            redirectTo={routes.signinPage}
+            component={RestoreView}
+          />
+          <PublicRoute
+            path={routes.confirmPage}
+            restricted
+            redirectTo={routes.signinPage}
+            component={ConfirmView}
           />
           <PrivateRoute
             path={routes.doctorPage}

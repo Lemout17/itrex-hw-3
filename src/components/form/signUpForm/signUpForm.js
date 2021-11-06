@@ -1,10 +1,20 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import s from '../form.module.css'
+
 import Title from '../../title'
+import Form from '../formStyles/form'
+import Wrapper from '../formStyles/inputWrapper'
+import Input from '../formStyles/input'
+import ErrorText from '../formStyles/errorText'
+import Svg from '../formStyles/passwordSvg'
+import Button from '../formStyles/button'
+import TextWrapper from '../formStyles/textWrapper'
+import Text from '../formStyles/text'
+import Link from '../formStyles/link'
+
 import routes from '../../../routes/routes'
 import authActions from '../../../redux/auth/authActions'
 
@@ -14,7 +24,6 @@ const SignUpForm = () => {
   const dispatch = useDispatch()
 
   const handleToggle = (e) => {
-    console.log(e.target.id)
     if (e.target.id === 'togglePass1') {
       setTogglePass1(!togglePass1)
     }
@@ -69,21 +78,18 @@ const SignUpForm = () => {
 
   return (
     <>
-      <form
-        onClick={handleToggle}
-        onSubmit={formik.handleSubmit}
-        className={s.form}
-      >
+      <Form onSubmit={formik.handleSubmit}>
         <Title text="Sign Up" />
 
         <div>
-          <div className={s.wrapper}>
-            <input
-              className={
-                formik.touched.firstName && formik.errors.firstName
-                  ? `${s.input} ${s.input_error}`
-                  : `${s.input}`
-              }
+          <Wrapper
+            status={
+              formik.touched.firstName && formik.errors.firstName
+                ? 'error'
+                : 'normal'
+            }
+          >
+            <Input
               id="firstName"
               name="firstName"
               type="text"
@@ -93,17 +99,18 @@ const SignUpForm = () => {
               value={formik.values.firstName}
             />
             {formik.touched.firstName && formik.errors.firstName ? (
-              <p className={s.text_error}>{formik.errors.firstName}</p>
+              <ErrorText>{formik.errors.firstName}</ErrorText>
             ) : null}
-          </div>
+          </Wrapper>
 
-          <div className={s.wrapper}>
-            <input
-              className={
-                formik.touched.lastName && formik.errors.lastName
-                  ? `${s.input} ${s.input_error}`
-                  : `${s.input}`
-              }
+          <Wrapper
+            status={
+              formik.touched.lastName && formik.errors.lastName
+                ? 'error'
+                : 'normal'
+            }
+          >
+            <Input
               id="lastName"
               name="lastName"
               type="text"
@@ -113,17 +120,16 @@ const SignUpForm = () => {
               value={formik.values.lastName}
             />
             {formik.touched.lastName && formik.errors.lastName ? (
-              <p className={s.text_error}>{formik.errors.lastName}</p>
+              <ErrorText>{formik.errors.lastName}</ErrorText>
             ) : null}
-          </div>
+          </Wrapper>
 
-          <div className={s.wrapper}>
-            <input
-              className={
-                formik.touched.email && formik.errors.email
-                  ? `${s.input} ${s.input_error}`
-                  : `${s.input}`
-              }
+          <Wrapper
+            status={
+              formik.touched.email && formik.errors.email ? 'error' : 'normal'
+            }
+          >
+            <Input
               id="email"
               name="email"
               type="email"
@@ -133,17 +139,18 @@ const SignUpForm = () => {
               value={formik.values.email}
             />
             {formik.touched.email && formik.errors.email ? (
-              <p className={s.text_error}>{formik.errors.email}</p>
+              <ErrorText>{formik.errors.email}</ErrorText>
             ) : null}
-          </div>
+          </Wrapper>
 
-          <div className={s.wrapper}>
-            <input
-              className={
-                formik.touched.password && formik.errors.password
-                  ? `${s.input} ${s.input_error}`
-                  : `${s.input}`
-              }
+          <Wrapper
+            status={
+              formik.touched.password && formik.errors.password
+                ? 'error'
+                : 'normal'
+            }
+          >
+            <Input
               id="password"
               name="password"
               type={togglePass1 ? 'text' : 'password'}
@@ -153,27 +160,24 @@ const SignUpForm = () => {
               value={formik.values.password}
             />
             {formik.touched.password && formik.errors.password ? (
-              <p className={s.text_error}>{formik.errors.password}</p>
+              <ErrorText>{formik.errors.password}</ErrorText>
             ) : null}
 
-            <div
-              id="togglePass1"
+            <Svg
               onClick={handleToggle}
-              className={
-                togglePass1
-                  ? `${s.svg} ${s.svg_open}`
-                  : `${s.svg} ${s.svg_close}`
-              }
-            ></div>
-          </div>
+              id="togglePass1"
+              state={togglePass1 ? 'open' : 'close'}
+            ></Svg>
+          </Wrapper>
 
-          <div className={s.wrapper}>
-            <input
-              className={
-                formik.touched.confirmPass && formik.errors.confirmPass
-                  ? `${s.input} ${s.input_error}`
-                  : `${s.input}`
-              }
+          <Wrapper
+            status={
+              formik.touched.confirmPass && formik.errors.confirmPass
+                ? 'error'
+                : 'normal'
+            }
+          >
+            <Input
               id="confirmPass"
               name="confirmPass"
               type={togglePass2 ? 'text' : 'password'}
@@ -183,32 +187,27 @@ const SignUpForm = () => {
               value={formik.values.confirmPass}
             />
             {formik.touched.confirmPass && formik.errors.confirmPass ? (
-              <p className={s.text_error}>{formik.errors.confirmPass}</p>
+              <ErrorText>{formik.errors.confirmPass}</ErrorText>
             ) : null}
 
-            <div
-              id="togglePass2"
+            <Svg
+              state={togglePass2 ? 'open' : 'close'}
               onClick={handleToggle}
-              className={
-                togglePass2
-                  ? `${s.svg} ${s.svg_open}`
-                  : `${s.svg} ${s.svg_close}`
-              }
-            ></div>
-          </div>
+              id="togglePass2"
+            ></Svg>
+          </Wrapper>
+        </div>
+        <Button>Sign Up</Button>
 
-          <button className={s.button} type="submit">
-            Submit
-          </button>
-
-          <div className={s.text_wrapper}>
-            <p className={s.text}>Already have an account?</p>
-            <NavLink className={s.link} exact to={routes.signinPage}>
+        <TextWrapper>
+          <Text>Already have an account?</Text>
+          <Link>
+            <NavLink exact to={routes.signinPage}>
               Sign in
             </NavLink>
-          </div>
-        </div>
-      </form>
+          </Link>
+        </TextWrapper>
+      </Form>
     </>
   )
 }

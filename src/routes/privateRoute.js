@@ -20,10 +20,11 @@ export default function PrivateRoute({
 
 PrivateRoute.defaultProps = {
   isAuthenticated: false,
+  children: null,
 }
 
 PrivateRoute.propTypes = {
   isAuthenticated: PropTypes.bool,
   redirectTo: PropTypes.string.isRequired,
-  children: PropTypes.shape().isRequired,
+  children: PropTypes.shape(),
 }
