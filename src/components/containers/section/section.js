@@ -11,21 +11,31 @@ const SectionWrapper = styled.section`
   background-size: contain;
   background-position: top center;
 
+  ${(props) => props.doctor && 'padding: 0;'}
+  ${(props) => props.doctor && ' background-image:none;'}
+
   @media screen and (min-width: 768px) {
     padding: 0;
     padding-left: 208px;
     background-image: url(${imgTablet});
     background-position: left;
     background-size: cover;
+
+    ${(props) => props.doctor && 'padding: 0 64px 48px;'}
+    ${(props) => props.doctor && ' background-image:none;'}
   }
 
   @media screen and (min-width: 1280px) {
     background-image: url(${imgDesktop});
+
+    ${(props) => props.doctor && 'padding: 0;'}
+    ${(props) => props.doctor && ' background-image:none;'}
   }
 `
 
-const Section = ({ children }) => {
-  return <SectionWrapper>{children}</SectionWrapper>
+const Section = (props) => {
+  console.log('PROPS', props)
+  return <SectionWrapper {...props}>{props.children}</SectionWrapper>
 }
 
 Section.propTypes = {

@@ -8,9 +8,11 @@ const TitleWrapper = styled.div`
   position: relative;
   margin-bottom: 24px;
   ${(props) => props.restore && 'padding-left: 40px;'}
+  ${(props) => props.doctor && 'margin-bottom: 0;'}
 
   @media screen and (min-width: 768px) {
     margin-bottom: 40px;
+    ${(props) => props.doctor && 'margin-bottom: 0;'}
   }
 `
 const TitleText = styled.span`
@@ -39,20 +41,20 @@ const LinkSvg = styled.div`
   }
 `
 
-const Title = ({ text, restore }) => (
+const Title = (props) => (
   <>
-    {restore ? (
+    {props.restore ? (
       <TitleWrapper restore>
         <TitleText>
           <LinkSvg>
             <NavLink exact to={routes.signinPage}></NavLink>
           </LinkSvg>
-          {text}
+          {props.text}
         </TitleText>
       </TitleWrapper>
     ) : (
-      <TitleWrapper>
-        <TitleText>{text}</TitleText>
+      <TitleWrapper {...props}>
+        <TitleText>{props.text}</TitleText>
       </TitleWrapper>
     )}
   </>
