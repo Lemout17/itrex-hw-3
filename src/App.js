@@ -31,6 +31,10 @@ const DoctorView = lazy(() =>
   import('./view/doctorView' /* webpackChunkName: "doctor-page" */)
 )
 
+const PatientView = lazy(() =>
+  import('./view/patientView' /* webpackChunkName: "patient-page" */)
+)
+
 function App() {
   return (
     <>
@@ -40,7 +44,7 @@ function App() {
             exact
             path={routes.signupPage}
             restricted
-            redirectTo={routes.doctorPage}
+            redirectTo={routes.patientPage}
             component={SignUpView}
           />
           <PublicRoute
@@ -64,6 +68,11 @@ function App() {
           <PrivateRoute
             path={routes.doctorPage}
             component={DoctorView}
+            redirectTo={routes.signinPage}
+          />
+          <PrivateRoute
+            path={routes.patientPage}
+            component={PatientView}
             redirectTo={routes.signinPage}
           />
         </Switch>

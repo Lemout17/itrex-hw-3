@@ -4,5 +4,5 @@ export default {
   restorePage: '/restore',
   confirmPage: '/confirm',
   doctorPage: '/doctor',
-  userPage: '/user',
+  patientPage: '/patient',
 }

@@ -1,13 +1,9 @@
 import styled from 'styled-components'
-import avatarImg from '../../../img/doctor-page/avatar.png'
 
 const AvatarWrapper = styled.div`
   position: relative;
   width: 40px;
   height: 40px;
-
-  background-image: url(${avatarImg});
-  background-size: cover;
 `
 
 const AvatarOnline = styled.div`
@@ -22,10 +18,12 @@ const AvatarOnline = styled.div`
   background-color: var(--online-color);
 `
 
-const UserAvatar = () => {
+const UserAvatar = ({ avatar }) => {
+  console.log(avatar)
   return (
     <AvatarWrapper>
-      <AvatarOnline></AvatarOnline>
+      <img src={avatar} alt="doctor" />
+      <AvatarOnline />
     </AvatarWrapper>
   )
 }

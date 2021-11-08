@@ -4,27 +4,27 @@ import Section from '../../components/containers/section'
 import Logo from '../../components/header/logo'
 import UserName from '../../components/header/userName'
 import UserAvatar from '../../components/header/userAvatar'
-import MainDoctor from '../../components/mainDoctor'
+import MainPatient from '../../components/mainPatient'
 
-import doctorImg from '../../img/doctor-page/avatar.png'
+import patientImg from '../../img/doctor-page/user.png'
 
-const user = { name: 'Miranda Nelson', type: 'Doctor' }
+const user = { name: 'Larry Prinston', type: 'Patient' }
 
-const DoctorView = () => {
+const UserView = () => {
   return (
     <>
       <Header>
         <Logo />
         <UserName user={user} />
-        <UserAvatar avatar={doctorImg} />
+        <UserAvatar avatar={patientImg} />
       </Header>
       <Main>
         <Section doctor>
-          <MainDoctor />
+          <MainPatient />
         </Section>
       </Main>
     </>
   )
 }
 
-export default DoctorView
+export default UserView

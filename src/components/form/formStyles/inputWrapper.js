@@ -9,13 +9,9 @@ const Wrapper = styled.div`
   margin-bottom: 24px;
   ${(props) => props.restore && 'margin-bottom: 32px;'}
   ${(props) =>
-    props.status === 'error' ? 'margin-bottom: 32px;' : 'margin-bottom: 24px;'}
-    ${(props) =>
-    props.status === 'error' && props.restore
-      ? 'margin-bottom: 48px;'
-      : 'margin-bottom: 24px;'}
-
+    props.status === 'error' ? 'margin-bottom: 36px;' : 'margin-bottom: 24px;'}
   color: var(--text-color);
+  ${(props) => props.restore && 'margin-bottom: 32px;'}
 
   &:last-child {
     margin-bottom: 32px;

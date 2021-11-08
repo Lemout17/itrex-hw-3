@@ -28,13 +28,12 @@ const SectionWrapper = styled.section`
   @media screen and (min-width: 1280px) {
     background-image: url(${imgDesktop});
 
-    ${(props) => props.doctor && 'padding: 0;'}
+    ${(props) => props.doctor && 'padding: 0 64px 48px;'}
     ${(props) => props.doctor && ' background-image:none;'}
   }
 `
 
 const Section = (props) => {
-  console.log('PROPS', props)
   return <SectionWrapper {...props}>{props.children}</SectionWrapper>
 }
 

@@ -12,13 +12,13 @@ import {
   CardDescWrapper,
   CardDate,
   CardDescription,
-} from './styles'
+} from '../../mainDoctor/patientsList/styles'
 
-const PatientsList = ({ data }) => {
+const AppointmentsList = ({ data }) => {
   return (
     <Listing>
       {data[0].map(({ id, name, status, date, description }) => (
-        <Card key={id}>
+        <Card patient key={id}>
           <CardHeader>
             <CardAvatar />
             <TextWrapper>
@@ -40,4 +40,4 @@ const PatientsList = ({ data }) => {
   )
 }
 
-export default PatientsList
+export default AppointmentsList

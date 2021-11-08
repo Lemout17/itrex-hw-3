@@ -4,7 +4,7 @@ import verticalSvg from '../../../svg/doctor-page/more-vertical.svg'
 import clockSvg from '../../../svg/doctor-page/clock-three.svg'
 import clipboardSvg from '../../../svg/doctor-page/clipboard-blank.svg'
 
-const PatientsListing = styled.ul`
+const Listing = styled.ul`
   @media screen and (min-width: 1280px) {
     display: grid;
     gap: 20px;
@@ -12,9 +12,10 @@ const PatientsListing = styled.ul`
   }
 `
 
-const PatientCard = styled.li`
+const Card = styled.li`
   width: 100%;
   height: 305px;
+  ${(props) => props.patient && 'height: 232px;'}
   margin-bottom: 24px;
   border-radius: 12px;
   box-shadow: 0px 4px 32px rgba(218, 228, 255, 0.24);
@@ -33,7 +34,7 @@ const PatientCard = styled.li`
   }
 `
 
-const PatientCardHeader = styled.div`
+const CardHeader = styled.div`
   display: flex;
   align-items: center;
   padding: 16px;
@@ -45,7 +46,7 @@ const PatientCardHeader = styled.div`
   }
 `
 
-const PatientCardAvatar = styled.div`
+const CardAvatar = styled.div`
   width: 48px;
   height: 48px;
   margin-right: 16px;
@@ -54,7 +55,7 @@ const PatientCardAvatar = styled.div`
   background-size: cover;
 `
 
-const PatientTextWrapper = styled.div`
+const TextWrapper = styled.div`
   width: 130px;
   margin-right: 14px;
   @media screen and (min-width: 768px) {
@@ -62,20 +63,20 @@ const PatientTextWrapper = styled.div`
   }
 `
 
-const PatientTextName = styled.p`
+const TextName = styled.p`
   font-size: 17px;
   font-weight: 600;
   line-height: 1.3;
   color: var(--title-color);
 `
 
-const PatientCardStatusWrapper = styled.div`
+const CardStatusWrapper = styled.div`
   display: flex;
   align-items: baseline;
   margin-top: 5px;
 `
 
-const PatientCardStatusIndicator = styled.div`
+const CardStatusIndicator = styled.div`
   width: 8px;
   height: 8px;
   padding: 4px;
@@ -85,7 +86,7 @@ const PatientCardStatusIndicator = styled.div`
   background-color: var(--online-color);
 `
 
-const PatientCardTextStatus = styled.span`
+const CardTextStatus = styled.span`
   margin-left: 8px;
   font-size: 13px;
   font-weight: 500;
@@ -93,7 +94,7 @@ const PatientCardTextStatus = styled.span`
   color: var(--text-color);
 `
 
-const PatientCardButton = styled.button`
+const CardButton = styled.button`
   width: 24px;
   height: 24px;
 
@@ -106,12 +107,12 @@ const PatientCardButton = styled.button`
     margin-left: auto;
   }
 `
-const PatientCardDescWrapper = styled.div`
+const CardDescWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 16px 24px 24px 56px;
 `
-const PatientCardDate = styled.p`
+const CardDate = styled.p`
   position: relative;
   font-size: 15px;
   font-weight: 600;
@@ -132,7 +133,7 @@ const PatientCardDate = styled.p`
   }
 `
 
-const PatientCardDescription = styled.p`
+const CardDescription = styled.p`
   position: relative;
   margin-top: 23px;
   font-weight: 400;
@@ -154,17 +155,17 @@ const PatientCardDescription = styled.p`
 `
 
 export {
-  PatientsListing,
-  PatientCard,
-  PatientCardHeader,
-  PatientCardAvatar,
-  PatientTextWrapper,
-  PatientTextName,
-  PatientCardStatusWrapper,
-  PatientCardStatusIndicator,
-  PatientCardTextStatus,
-  PatientCardButton,
-  PatientCardDescWrapper,
-  PatientCardDate,
-  PatientCardDescription,
+  Listing,
+  Card,
+  CardHeader,
+  CardAvatar,
+  TextWrapper,
+  TextName,
+  CardStatusWrapper,
+  CardStatusIndicator,
+  CardTextStatus,
+  CardButton,
+  CardDescWrapper,
+  CardDate,
+  CardDescription,
 }

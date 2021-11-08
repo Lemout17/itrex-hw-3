@@ -3,7 +3,7 @@ import Title from '../title/title'
 import EmptyState from './emptyWrapper'
 import PatientsList from './patientsList'
 import {
-  DoctorWrapper,
+  MainWrapper,
   ButtonWrapper,
   Button,
   FilterWrapper,
@@ -15,7 +15,7 @@ import data from './db.json'
 const MainDoctor = () => {
   const [state, setstate] = useState([data])
   return (
-    <DoctorWrapper>
+    <MainWrapper>
       <ButtonWrapper>
         <Button>Patients</Button>
         <Button white>Resolutions</Button>
@@ -28,7 +28,7 @@ const MainDoctor = () => {
       </FilterWrapper>
 
       {state.length <= 0 ? <EmptyState /> : <PatientsList data={state} />}
-    </DoctorWrapper>
+    </MainWrapper>
   )
 }
 

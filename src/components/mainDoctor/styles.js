@@ -3,7 +3,7 @@ import searchSvg from '../../svg/doctor-page/search.svg'
 import sliderSvg from '../../svg/doctor-page/sliders-v-alt.svg'
 import historySvg from '../../svg/doctor-page/medical-history.svg'
 
-const DoctorWrapper = styled.div`
+const MainWrapper = styled.div`
   width: 100%;
   height: auto;
 
@@ -14,7 +14,7 @@ const DoctorWrapper = styled.div`
   border-radius: 16px 16px 0 0;
 
   @media screen and (min-width: 768px) {
-    height: auto;
+    min-height: 896px;
     padding: 40px 48px;
   }
 `
@@ -32,6 +32,7 @@ const Button = styled.button`
 
   font-size: 15px;
   font-weight: 600;
+  ${(props) => props.white && 'font-weight: 400;'}
   line-height: 1.3;
   color: var(--white-color);
   ${(props) => props.white && 'color:var(--input-accent);'}
@@ -43,6 +44,18 @@ const Button = styled.button`
 
   &:first-child {
     margin-right: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 160px;
+
+    &:first-child {
+      margin-right: 12px;
+    }
+
+    &:last-child {
+      ${(props) => props.patient && 'margin-left: 12px;'}
+    }
   }
 `
 
@@ -69,6 +82,7 @@ const FilterButton = styled.button`
 
   &:last-child {
     margin-left: 28px;
+    ${(props) => props.patient && 'margin-left: auto;'}
     background-image: url(${sliderSvg});
   }
 `
@@ -110,7 +124,7 @@ const EmptyText = styled.p`
 `
 
 export {
-  DoctorWrapper,
+  MainWrapper,
   ButtonWrapper,
   Button,
   FilterWrapper,

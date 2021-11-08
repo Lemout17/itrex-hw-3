@@ -30,11 +30,11 @@ const SubText = styled.span`
   }
 `
 
-const UserName = () => {
+const UserName = ({ user }) => {
   return (
     <UserWrapper>
-      <Text>Miranda Nelson</Text>
-      <SubText>Doctor</SubText>
+      <Text>{user.name}</Text>
+      <SubText>{user.type}</SubText>
     </UserWrapper>
   )
 }
