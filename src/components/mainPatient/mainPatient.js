@@ -5,6 +5,9 @@ import {
   Button,
   FilterWrapper,
   FilterButton,
+  SelectorWrapper,
+  Selector,
+  Text,
 } from '../mainDoctor/styles'
 
 import Title from '../title'
@@ -29,6 +32,13 @@ const MainPatient = () => {
       <FilterWrapper>
         <Title doctor text="My appointments" />
         <FilterButton patient />
+        <SelectorWrapper>
+          <Text desktop>Show:</Text>
+          <Selector>Upcoming</Selector>
+        </SelectorWrapper>
+        <Button patient desktop>
+          Create an appointment
+        </Button>
       </FilterWrapper>
 
       {!state.length ? <EmptyState /> : <AppointmentsList data={state} />}

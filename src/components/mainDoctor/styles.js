@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import searchSvg from '../../svg/doctor-page/search.svg'
 import sliderSvg from '../../svg/doctor-page/sliders-v-alt.svg'
 import historySvg from '../../svg/doctor-page/medical-history.svg'
+import plusSvg from '../../svg/doctor-page/plus.svg'
+import arrowDownSvg from '../../svg/doctor-page/angle-down.svg'
 
 const MainWrapper = styled.div`
   width: 100%;
@@ -62,11 +64,25 @@ const Button = styled.button`
 
   @media screen and (min-width: 1280px) {
     ${(props) => props.patient && 'display: block;'}
+    ${(props) => props.desktop && 'width: 244px;'}
+    ${(props) => props.desktop && 'height: 48px;'}
+    ${(props) => props.desktop && 'padding: 12px 16px;'}
+    
+    &:last-child {
+      ${(props) => props.desktop && 'margin-left: 64px;'}
+    }
+
+    ${(props) => props.desktop && 'text-align:right;'}
+    ${(props) => props.desktop && `background-image: url(${plusSvg});`}
+    ${(props) => props.desktop && 'background-repeat:no-repeat;'}
+    ${(props) => props.desktop && 'background-position-y:center;'}
+    ${(props) => props.desktop && 'background-position-x: 16px;'}
   }
 `
 
 const FilterWrapper = styled.div`
   display: flex;
+  align-items: center;
   margin: 40px auto 16px;
 
   @media screen and (min-width: 768px) {
@@ -82,6 +98,7 @@ const FilterButton = styled.button`
   border: none;
   background-color: transparent;
   background-image: url(${searchSvg});
+  ${(props) => props.patient && `background-image: url(${sliderSvg});`}
   background-size: cover;
 
   cursor: pointer;
@@ -91,6 +108,33 @@ const FilterButton = styled.button`
     ${(props) => props.patient && 'margin-left: auto;'}
     background-image: url(${sliderSvg});
   }
+
+  @media screen and (min-width: 1280px) {
+    ${(props) => props.patient && 'display: none;'}
+  }
+`
+
+const SelectorWrapper = styled.div`
+  display: none;
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+`
+
+const Selector = styled.button`
+  padding: 8px 30px 8px 16px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--input-accent);
+  border: none;
+  background-color: transparent;
+  background-image: url(${arrowDownSvg});
+  background-repeat: no-repeat;
+  background-position-x: 100px;
+  background-position-y: center;
 `
 
 const Wrapper = styled.div`
@@ -121,7 +165,7 @@ const Icon = styled.div`
 `
 const Text = styled.p`
   width: 240px;
-
+  ${(props) => props.desktop && 'width: 100%;'}
   text-align: center;
   font-weight: normal;
   font-size: 15px;
@@ -135,6 +179,8 @@ export {
   Button,
   FilterWrapper,
   FilterButton,
+  SelectorWrapper,
+  Selector,
   Wrapper,
   Icon,
   Text,
