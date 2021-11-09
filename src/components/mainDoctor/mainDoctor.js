@@ -8,6 +8,10 @@ import {
   Button,
   FilterWrapper,
   FilterButton,
+  SelectorWrapper,
+  Text,
+  Input,
+  Selector,
 } from './styles'
 
 import data from './db.json'
@@ -23,8 +27,15 @@ const MainDoctor = () => {
 
       <FilterWrapper>
         <Title doctor text="My Patients" />
-        <FilterButton></FilterButton>
-        <FilterButton></FilterButton>
+        <ButtonWrapper mobile>
+          <FilterButton desktop />
+          <FilterButton desktop />
+        </ButtonWrapper>
+        <SelectorWrapper>
+          <Input type="text" placeholder="Search" />
+          <Text desktop>Sort by:</Text>
+          <Selector doctor>Date</Selector>
+        </SelectorWrapper>
       </FilterWrapper>
 
       {!state.length ? <EmptyState /> : <PatientsList data={state} />}

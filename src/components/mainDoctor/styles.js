@@ -25,6 +25,7 @@ const MainWrapper = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
+  ${(props) => props.mobile && 'margin-left:auto;'}
 `
 
 const Button = styled.button`
@@ -45,6 +46,8 @@ const Button = styled.button`
   border-radius: 8px;
   background-color: var(--input-accent);
   ${(props) => props.white && 'background-color:var(--white-color);'}
+
+  cursor: pointer;
 
   &:first-child {
     margin-right: 24px;
@@ -111,6 +114,7 @@ const FilterButton = styled.button`
 
   @media screen and (min-width: 1280px) {
     ${(props) => props.patient && 'display: none;'}
+    ${(props) => props.desktop && 'display: none;'}
   }
 `
 
@@ -121,6 +125,29 @@ const SelectorWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-left: auto;
+  }
+`
+
+const Input = styled.input`
+  width: 120px;
+  padding-left: 40px;
+  margin-right: 16px;
+
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--title-color);
+
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+  background-image: url(${searchSvg});
+  background-repeat: no-repeat;
+  background-position-x: 3px;
+  background-position-y: center;
+
+  &::placeholder {
+    color: var(--text-color);
   }
 `
 
@@ -135,6 +162,9 @@ const Selector = styled.button`
   background-repeat: no-repeat;
   background-position-x: 100px;
   background-position-y: center;
+  ${(props) => props.doctor && `background-position-x: 60px;`}
+
+  cursor: pointer;
 `
 
 const Wrapper = styled.div`
@@ -180,6 +210,7 @@ export {
   FilterWrapper,
   FilterButton,
   SelectorWrapper,
+  Input,
   Selector,
   Wrapper,
   Icon,
