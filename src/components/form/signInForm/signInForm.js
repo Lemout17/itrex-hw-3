@@ -5,15 +5,17 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 import Title from '../../title'
-import Form from '../formStyles/form'
-import Wrapper from '../formStyles/inputWrapper'
-import Input from '../formStyles/input'
-import ErrorText from '../formStyles/errorText'
-import Svg from '../formStyles/passwordSvg'
-import Button from '../formStyles/button'
-import Link from '../formStyles/link'
-import TextWrapper from '../formStyles/textWrapper'
-import Text from '../formStyles/text'
+import {
+  Form,
+  Wrapper,
+  Input,
+  ErrorText,
+  Svg,
+  Button,
+  Link,
+  Text,
+  TextWrapper,
+} from '../styles'
 
 import routes from '../../../routes/routes'
 import authActions from '../../../redux/auth/authActions'

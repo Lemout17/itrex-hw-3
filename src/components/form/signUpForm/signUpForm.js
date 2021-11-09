@@ -4,16 +4,18 @@ import { NavLink } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
+import {
+  Form,
+  Wrapper,
+  Input,
+  ErrorText,
+  Svg,
+  Button,
+  Link,
+  Text,
+  TextWrapper,
+} from '../styles'
 import Title from '../../title'
-import Form from '../formStyles/form'
-import Wrapper from '../formStyles/inputWrapper'
-import Input from '../formStyles/input'
-import ErrorText from '../formStyles/errorText'
-import Svg from '../formStyles/passwordSvg'
-import Button from '../formStyles/button'
-import TextWrapper from '../formStyles/textWrapper'
-import Text from '../formStyles/text'
-import Link from '../formStyles/link'
 
 import routes from '../../../routes/routes'
 import authActions from '../../../redux/auth/authActions'

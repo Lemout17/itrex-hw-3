@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom'
+
 import Container from './styles'
 import Title from '../../title'
-import Text from '../formStyles/text'
-import Link from '../formStyles/link'
+import { Text, Link } from '../styles'
+
 import routes from '../../../routes/routes'
 
 const ConfirmFrom = () => {

@@ -2,15 +2,10 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 
-import routes from '../../../routes/routes'
-
 import Title from '../../title/title'
-import Form from '../formStyles/form'
-import Text from '../formStyles/text'
-import Wrapper from '../formStyles/inputWrapper'
-import Input from '../formStyles/input'
-import ErrorText from '../formStyles/errorText'
-import Button from '../formStyles/button'
+import { Form, Wrapper, Input, ErrorText, Button, Text } from '../styles'
+
+import routes from '../../../routes/routes'
 
 const RestoreForm = () => {
   let history = useHistory()
