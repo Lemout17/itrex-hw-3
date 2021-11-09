@@ -1,15 +1,15 @@
 import React from 'react'
-import { EmptyWrapper, EmptyIcon, EmptyText } from '../styles'
+import { Wrapper, Icon, Text } from '../styles'
 
 const EmptyState = () => {
   return (
-    <EmptyWrapper>
-      <EmptyIcon />
-      <EmptyText>
+    <Wrapper>
+      <Icon />
+      <Text>
         You have no patients yet. <br />
         To create a patient profile, please contact your administrator.
-      </EmptyText>
-    </EmptyWrapper>
+      </Text>
+    </Wrapper>
   )
 }
 

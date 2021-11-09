@@ -23,16 +23,12 @@ const SignUpForm = () => {
   const [togglePass2, setTogglePass2] = useState(false)
   const dispatch = useDispatch()
 
-  const handleToggle = (e) => {
-    if (e.target.id === 'togglePass1') {
-      setTogglePass1(!togglePass1)
-    }
+  const handleToggle = (e) => checkTogglePass(e.target.id)
 
-    if (e.target.id === 'togglePass2') {
-      setTogglePass2(!togglePass2)
-    }
-
-    return
+  const checkTogglePass = (id) => {
+    id === 'togglePass1'
+      ? setTogglePass1(!togglePass1)
+      : setTogglePass2(!togglePass2)
   }
 
   const formik = useFormik({

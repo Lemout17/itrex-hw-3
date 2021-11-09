@@ -1,16 +1,15 @@
 import React from 'react'
-import Main from '../../components/containers/main'
 import Section from '../../components/containers/section'
 import SignUpForm from '../../components/form/signUpForm'
 
 const SignUpView = () => {
   return (
     <>
-      <Main>
+      <main>
         <Section>
           <SignUpForm />
         </Section>
-      </Main>
+      </main>
     </>
   )
 }

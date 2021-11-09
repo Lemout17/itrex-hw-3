@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Title from '../title/title'
-import EmptyState from './emptyWrapper'
+import EmptyState from './emptyState'
 import PatientsList from './patientsList'
 import {
   MainWrapper,
@@ -13,7 +13,7 @@ import {
 import data from './db.json'
 
 const MainDoctor = () => {
-  const [state, setstate] = useState([])
+  const [state, setstate] = useState([data])
   return (
     <MainWrapper>
       <ButtonWrapper>
@@ -27,7 +27,7 @@ const MainDoctor = () => {
         <FilterButton></FilterButton>
       </FilterWrapper>
 
-      {state.length <= 0 ? <EmptyState /> : <PatientsList data={state} />}
+      {!state.length ? <EmptyState /> : <PatientsList data={state} />}
     </MainWrapper>
   )
 }

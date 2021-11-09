@@ -1,5 +1,4 @@
 import Header from '../../components/header'
-import Main from '../../components/containers/main'
 import Section from '../../components/containers/section'
 import Logo from '../../components/header/logo'
 import UserName from '../../components/header/userName'
@@ -18,11 +17,11 @@ const DoctorView = () => {
         <UserName user={user} />
         <UserAvatar avatar={doctorImg} />
       </Header>
-      <Main>
+      <main>
         <Section doctor>
           <MainDoctor />
         </Section>
-      </Main>
+      </main>
     </>
   )
 }

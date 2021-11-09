@@ -1,14 +1,13 @@
-import Main from '../../components/containers/main'
 import Section from '../../components/containers/section'
 import RestoreForm from '../../components/form/restoreForm'
 
 const RestoreView = () => {
   return (
-    <Main>
+    <main>
       <Section>
         <RestoreForm />
       </Section>
-    </Main>
+    </main>
   )
 }
 

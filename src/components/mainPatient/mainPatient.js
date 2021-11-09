@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { useWindowWidth } from '@react-hook/window-size'
-
 import {
   MainWrapper,
   ButtonWrapper,
@@ -11,24 +9,21 @@ import {
 
 import Title from '../title'
 import AppointmentsList from './appointmentsList'
-import EmptyState from '../mainDoctor/emptyWrapper'
+import EmptyState from '../mainDoctor/emptyState'
 
 import data from './db.json'
 
 const MainPatient = () => {
   const [state, setstate] = useState([data])
-  const width = useWindowWidth()
 
   return (
     <MainWrapper>
       <ButtonWrapper>
         <Button white>Profile</Button>
         <Button>Appointments</Button>
-        {width >= 1280 && (
-          <Button patient white>
-            Resolutions
-          </Button>
-        )}
+        <Button patient white>
+          Resolutions
+        </Button>
       </ButtonWrapper>
 
       <FilterWrapper>
@@ -36,7 +31,7 @@ const MainPatient = () => {
         <FilterButton patient />
       </FilterWrapper>
 
-      {state.length <= 0 ? <EmptyState /> : <AppointmentsList data={state} />}
+      {!state.length ? <EmptyState /> : <AppointmentsList data={state} />}
     </MainWrapper>
   )
 }

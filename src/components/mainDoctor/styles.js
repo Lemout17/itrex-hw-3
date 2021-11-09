@@ -27,6 +27,7 @@ const ButtonWrapper = styled.div`
 
 const Button = styled.button`
   display: block;
+  ${(props) => props.patient && 'display: none;'}
   width: 120px;
   height: 40px;
   padding: 12px 0;
@@ -58,6 +59,10 @@ const Button = styled.button`
       ${(props) => props.patient && 'margin-left: 12px;'}
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    ${(props) => props.patient && 'display: block;'}
+  }
 `
 
 const FilterWrapper = styled.div`
@@ -88,7 +93,7 @@ const FilterButton = styled.button`
   }
 `
 
-const EmptyWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +111,7 @@ const EmptyWrapper = styled.div`
   }
 `
 
-const EmptyIcon = styled.div`
+const Icon = styled.div`
   width: 120px;
   height: 120px;
   margin-bottom: 32px;
@@ -114,7 +119,7 @@ const EmptyIcon = styled.div`
   background-image: url(${historySvg});
   background-size: cover;
 `
-const EmptyText = styled.p`
+const Text = styled.p`
   width: 240px;
 
   text-align: center;
@@ -130,7 +135,7 @@ export {
   Button,
   FilterWrapper,
   FilterButton,
-  EmptyWrapper,
-  EmptyIcon,
-  EmptyText,
+  Wrapper,
+  Icon,
+  Text,
 }
