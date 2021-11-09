@@ -32,7 +32,7 @@ const AppointmentsList = ({ data }) => {
           </CardHeader>
           <CardDescWrapper>
             <CardDate>{date}</CardDate>
-            <CardDescription>{description}</CardDescription>
+            <CardDescription patient>{description}</CardDescription>
           </CardDescWrapper>
         </Card>
       ))}

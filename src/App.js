@@ -7,10 +7,6 @@ import PrivateRoute from './routes/privateRoute'
 
 import Loader from './components/preloader'
 
-// import RestoreView from './view/restoreView'
-// import ConfirmView from './view/confirmView'
-// import NotFound from './view/notFound'
-
 const SignUpView = lazy(() =>
   import('./view/signUpView' /* webpackChunkName: "signup-page" */)
 )

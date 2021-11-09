@@ -3,6 +3,7 @@ import patientImg from '../../../img/doctor-page/patient.png'
 import verticalSvg from '../../../svg/doctor-page/more-vertical.svg'
 import clockSvg from '../../../svg/doctor-page/clock-three.svg'
 import clipboardSvg from '../../../svg/doctor-page/clipboard-blank.svg'
+import reasonSvg from '../../../svg/doctor-page/reason.svg'
 
 const Listing = styled.ul`
   @media screen and (min-width: 1280px) {
@@ -150,6 +151,7 @@ const CardDescription = styled.p`
     content: '';
 
     background-image: url(${clipboardSvg});
+    ${(props) => props.patient && `background-image: url(${reasonSvg});`}
     background-size: cover;
   }
 `

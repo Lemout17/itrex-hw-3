@@ -19,7 +19,6 @@ const AvatarOnline = styled.div`
 `
 
 const UserAvatar = ({ avatar }) => {
-  console.log(avatar)
   return (
     <AvatarWrapper>
       <img src={avatar} alt="doctor" />

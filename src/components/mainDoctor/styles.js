@@ -15,6 +15,7 @@ const MainWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     min-height: 896px;
+    border-radius: 16px;
     padding: 40px 48px;
   }
 `

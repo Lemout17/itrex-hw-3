@@ -13,7 +13,7 @@ import {
 import data from './db.json'
 
 const MainDoctor = () => {
-  const [state, setstate] = useState([data])
+  const [state, setstate] = useState([])
   return (
     <MainWrapper>
       <ButtonWrapper>
