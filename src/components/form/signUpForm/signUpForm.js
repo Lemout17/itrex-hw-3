@@ -15,7 +15,7 @@ import {
   Text,
   TextWrapper,
 } from '../styles'
-import Title from '../../title'
+import Title from '../../title/title'
 
 import routes from '../../../routes/routes'
 import authActions from '../../../redux/auth/authActions'

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
-import Title from '../../title'
+import Title from '../../title/title'
 import {
   Form,
   Wrapper,

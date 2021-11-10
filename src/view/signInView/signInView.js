@@ -1,6 +1,6 @@
 import React from 'react'
-import Section from '../../components/containers/section'
-import SignInForm from '../../components/form/signInForm'
+import Section from '../../components/containers/section/section'
+import SignInForm from '../../components/form/signInForm/signInForm'
 
 const SignInView = () => {
   return (

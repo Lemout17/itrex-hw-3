@@ -10,9 +10,9 @@ import {
   Text,
 } from '../mainDoctor/styles'
 
-import Title from '../title'
-import AppointmentsList from './appointmentsList'
-import EmptyState from '../mainDoctor/emptyState'
+import Title from '../title/title'
+import AppointmentsList from './appointmentsList/appointmentsList'
+import EmptyState from '../mainDoctor/emptyState/emptyState'
 
 import data from './db.json'
 

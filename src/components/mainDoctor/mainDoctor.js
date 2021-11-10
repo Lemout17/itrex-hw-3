@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Title from '../title/title'
-import EmptyState from './emptyState'
-import PatientsList from './patientsList'
+import EmptyState from './emptyState/emptyState'
+import PatientsList from './patientsList/patientsList'
 import {
   MainWrapper,
   ButtonWrapper,

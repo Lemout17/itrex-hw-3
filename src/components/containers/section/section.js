@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import SectionWrapper from './styles'
+import SectionWrapper from './section.styles'
 
 const Section = (props) => {
   return <SectionWrapper {...props}>{props.children}</SectionWrapper>

@@ -1,5 +1,5 @@
-import Section from '../../components/containers/section'
-import ConfirmFrom from '../../components/form/confirmForm'
+import Section from '../../components/containers/section/section'
+import ConfirmFrom from '../../components/form/confirmForm/confirmForm'
 
 const ConfirmView = () => {
   return (

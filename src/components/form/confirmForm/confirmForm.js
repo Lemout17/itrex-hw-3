@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
-import Container from './styles'
-import Title from '../../title'
+import Container from './confirm.styles'
+import Title from '../../title/title'
 import { Text, Link } from '../styles'
 
 import routes from '../../../routes/routes'

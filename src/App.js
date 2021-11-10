@@ -5,30 +5,36 @@ import routes from './routes/routes'
 import PublicRoute from './routes/publicRoute'
 import PrivateRoute from './routes/privateRoute'
 
-import Loader from './components/preloader'
+import Loader from './components/preloader/preloader'
 
 const SignUpView = lazy(() =>
-  import('./view/signUpView' /* webpackChunkName: "signup-page" */)
+  import('./view/signUpView/signUpView' /* webpackChunkName: "signup-page" */)
 )
 
 const SignInView = lazy(() =>
-  import('./view/signInView' /* webpackChunkName: "signin-page" */)
+  import('./view/signInView/signInView' /* webpackChunkName: "signin-page" */)
 )
 
 const RestoreView = lazy(() =>
-  import('./view/restoreView' /* webpackChunkName: "restore-page" */)
+  import(
+    './view/restoreView/restoreView' /* webpackChunkName: "restore-page" */
+  )
 )
 
 const ConfirmView = lazy(() =>
-  import('./view/confirmView' /* webpackChunkName: "confirm-page" */)
+  import(
+    './view/confirmView/confirmView' /* webpackChunkName: "confirm-page" */
+  )
 )
 
 const DoctorView = lazy(() =>
-  import('./view/doctorView' /* webpackChunkName: "doctor-page" */)
+  import('./view/doctorView/doctorView' /* webpackChunkName: "doctor-page" */)
 )
 
 const PatientView = lazy(() =>
-  import('./view/patientView' /* webpackChunkName: "patient-page" */)
+  import(
+    './view/patientView/patientView' /* webpackChunkName: "patient-page" */
+  )
 )
 
 function App() {

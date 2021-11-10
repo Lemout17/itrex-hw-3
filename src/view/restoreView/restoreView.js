@@ -1,5 +1,5 @@
-import Section from '../../components/containers/section'
-import RestoreForm from '../../components/form/restoreForm'
+import Section from '../../components/containers/section/section'
+import RestoreForm from '../../components/form/restoreForm/restoreForm'
 
 const RestoreView = () => {
   return (
