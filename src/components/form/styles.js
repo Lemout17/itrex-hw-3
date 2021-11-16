@@ -121,6 +121,7 @@ const Input = styled.input`
   @media screen and (min-width: 768px) {
     height: 56px;
     padding: 16px 18px 16px 64px;
+    ${(props) => props.picker && 'padding:16px 24px; margin-top:16px;'}
 
     font-size: 17px;
 

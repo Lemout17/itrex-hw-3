@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import {
   MainWrapper,
   ButtonWrapper,
@@ -9,15 +10,18 @@ import {
   Selector,
   Text,
 } from '../mainDoctor/styles'
+import userSelector from '../../redux/user/userSelector'
 
 import Title from '../title/title'
 import AppointmentsList from './appointmentsList/appointmentsList'
 import EmptyState from '../mainDoctor/emptyState/emptyState'
 
-import data from './db.json'
+const MainPatient = ({ handleChangeComponent }) => {
+  const data = useSelector(userSelector.getPatientsList)
 
-const MainPatient = () => {
-  const [state, setstate] = useState([data])
+  const handleClick = () => {
+    handleChangeComponent(true)
+  }
 
   return (
     <MainWrapper>
@@ -36,12 +40,12 @@ const MainPatient = () => {
           <Text desktop>Show:</Text>
           <Selector>Upcoming</Selector>
         </SelectorWrapper>
-        <Button patient desktop>
+        <Button patient desktop onClick={handleClick}>
           Create an appointment
         </Button>
       </FilterWrapper>
 
-      {!state.length ? <EmptyState /> : <AppointmentsList data={state} />}
+      {!data.length ? <EmptyState /> : <AppointmentsList data={data} />}
     </MainWrapper>
   )
 }
