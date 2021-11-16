@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
 
-const setPatientsList = createAction('user/setPatientsList')
+const setDoctorsList = createAction('user/setDoctorsList')
 
-export default { setPatientsList }
+export default { setDoctorsList }

@@ -17,8 +17,7 @@ import AppointmentsList from './appointmentsList/appointmentsList'
 import EmptyState from '../mainDoctor/emptyState/emptyState'
 
 const MainPatient = ({ handleChangeComponent }) => {
-  const data = useSelector(userSelector.getPatientsList)
-
+  const data = useSelector(userSelector.getDoctorsList)
   const handleClick = () => {
     handleChangeComponent(true)
   }

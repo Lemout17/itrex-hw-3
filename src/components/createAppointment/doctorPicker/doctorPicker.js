@@ -4,6 +4,7 @@ import userSelector from '../../../redux/user/userSelector'
 import { Text, PickerWrapper } from '../createAppointment.styles'
 import { Input } from '../../form/styles'
 import { Label, StyledSelect } from './doctorPicker.styles'
+import doctorsList from '../../mainPatient/db.json'
 
 const DoctorPicker = ({ onChangeFormData }) => {
   const [occupation, setOccupation] = useState('')
@@ -14,7 +15,6 @@ const DoctorPicker = ({ onChangeFormData }) => {
     description: '',
     note: '',
   })
-  const doctorsList = useSelector(userSelector.getPatientsList)
 
   const options = (elem) =>
     doctorsList.map((item) => ({
@@ -23,7 +23,6 @@ const DoctorPicker = ({ onChangeFormData }) => {
     }))
 
   const handleChange = (e) => {
-    console.log(e.target.name)
     setDoctor((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
@@ -41,7 +40,7 @@ const DoctorPicker = ({ onChangeFormData }) => {
   }, [doctorName, occupation, doctor])
 
   return (
-    <PickerWrapper>
+    <PickerWrapper doctorPicker>
       <Text before third>
         Select a doctor and define the reason of your visit
       </Text>

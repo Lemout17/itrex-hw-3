@@ -2,22 +2,46 @@
     {
         "id": "1",
         "name": "Joe Milton",
-        "status": "Therapist",
-        "date": "Thu Sept 10, 2021 4 pm – 5 pm",
-        "description": "Headache, pant"
+        "status": "Therapist"
     },
     {
         "id": "2",
         "name": "Dale Goodman",
-        "status": "Dentist",
-        "date": "Thu Sept 10, 2021 4 pm – 5 pm",
-        "description": "Toothache, caries"
+        "status": "Dentist"
     },
     {
         "id": "3",
         "name": "William Shakespeare",
-        "status": "ENT doctor",
-        "date": "Thu Sept 10, 2021 4 pm – 5 pm",
-        "description": "Pain in the ear,hearing loss"
+        "status": "ENT doctor"
+    },
+    {
+        "id": "4",
+        "name": "Devon Lane",
+        "status": "Immunologists"
+    },
+    {
+        "id": "5",
+        "name": "Jenny Wilson",
+        "status": "Cardiologists"
+    },
+    {
+        "id": "6",
+        "name": "Cameron Williamson",
+        "status": "Endocrinologists"
+    },
+    {
+        "id": "7",
+        "name": "Courtney Henry",
+        "status": "Family Physicians"
+    },
+    {
+        "id": "8",
+        "name": "Savannah Nguyen",
+        "status": "Hematologists"
+    },
+    {
+        "id": "9",
+        "name": "Esther Howard",
+        "status": "Neurologists"
     }
 ]

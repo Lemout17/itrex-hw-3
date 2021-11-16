@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import Calendar from "react-calendar";
+import styled from 'styled-components'
+import Calendar from 'react-calendar'
 
 export const StyledCalendar = styled(Calendar)`
   &.react-calendar {
-    width: 400px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px;
     background: white;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.125em;
@@ -67,7 +67,7 @@ export const StyledCalendar = styled(Calendar)`
 
   .react-calendar__navigation__prev-button,
   .react-calendar__navigation__next-button {
-    color: #A1ABC9;
+    color: #a1abc9;
     font-size: 25px;
   }
 
@@ -82,7 +82,6 @@ export const StyledCalendar = styled(Calendar)`
     font-size: 0.75em;
   }
 
-
   .react-calendar__month-view__weekdays__weekday {
     padding: 1.2em;
   }
@@ -90,14 +89,13 @@ export const StyledCalendar = styled(Calendar)`
   abbr[title] {
     text-decoration: none;
     font-size: 13px;
-    color: #A1ABC9;
+    color: #a1abc9;
   }
 
   .react-calendar__month-view__days {
     font-size: 17px;
-    font-weight: 600
+    font-weight: 600;
   }
-
 
   .react-calendar__month-view__weekNumbers {
     .react-calendar__tile {
@@ -126,58 +124,58 @@ export const StyledCalendar = styled(Calendar)`
     padding: 0.75em 0.5em;
     background: none;
     border-radius: 12px;
-    &:disabled{
+    &:disabled {
       background-color: #f0f0f0;
     }
   }
-  
+
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
-    background-color: #7297FF;
+    background-color: #7297ff;
     color: #ffffff;
     transition: 0.1s linear;
   }
 
   .react-calendar__tile--now {
     background: inherit;
-    border: 1px solid #7297FF !important;
+    border: 1px solid #7297ff !important;
     border-radius: 12px;
-    color: #7297FF;
+    color: #7297ff;
   }
 
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {
-    background: #7297FF;
+    background: #7297ff;
     color: #fff;
   }
 
   .react-calendar__tile--hasActive {
     background: inherit;
-    border: 1px solid #7297FF !important;
+    border: 1px solid #7297ff !important;
     border-radius: 12px;
-    color: #7297FF;
+    color: #7297ff;
   }
 
   .react-calendar__tile--hasActive:enabled:hover,
   .react-calendar__tile--hasActive:enabled:focus {
-    background: #7297FF;
+    background: #7297ff;
     color: #fff;
   }
 
   .react-calendar__tile--active {
     color: white;
-    background: #7297FF;
+    background: #7297ff;
     border-radius: 12px;
   }
 
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
-    background: #7297FF;
+    background: #7297ff;
   }
 
   .react-calendar--selectRange {
-    .react-calendar__tile--hover{
-      background-color: #e6e6e6;  
+    .react-calendar__tile--hover {
+      background-color: #e6e6e6;
     }
   }
 
@@ -185,5 +183,4 @@ export const StyledCalendar = styled(Calendar)`
   .react-calendar__navigation__prev2-button {
     display: none;
   }
-
-`;
+`

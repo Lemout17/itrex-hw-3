@@ -53,7 +53,7 @@ const CreateAppointment = ({ handleChangeComponent }) => {
       description: formData.description,
     }
 
-    dispatch(userActions.setPatientsList(data))
+    dispatch(userActions.setDoctorsList(data))
     handleClick()
   }
 

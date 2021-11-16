@@ -16,14 +16,12 @@ const DatePicker = ({ onChangeDateData }) => {
     .toLocaleDateString('en-US', options)
     .replace(',', '')
 
-  console.log(normalizedDate)
-
   useEffect(() => {
     onChangeDateData(normalizedDate, 'dateData')
   }, [normalizedDate])
 
   return (
-    <PickerWrapper>
+    <PickerWrapper datePicker>
       <Text before>Choose a day for an appointment</Text>
       <StyledCalendar
         locale="en"

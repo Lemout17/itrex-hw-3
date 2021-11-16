@@ -11,7 +11,18 @@ const StyledSelect = styled(Select)`
       font-size: 17px;
       line-height: 1.4;
     }
+
+    &__single-value {
+      color: var(--title-color);
+    }
+
+    &__placeholder {
+      color: var(--text-color);
+    }
+
     &__menu {
+      overflow-y: scroll;
+      padding: 4px;
       font-weight: 400;
       font-size: 15px;
       line-height: 1.3;
@@ -20,26 +31,20 @@ const StyledSelect = styled(Select)`
       filter: drop-shadow(0px 4px 40px rgba(118, 136, 187, 0.16));
       overflow-y: hidden;
       &-list {
-        &::-webkit-scrollbar {
-          width: 8px;
-          margin-right: 44px;
-          background-color: rgba(220, 224, 236, 0.3);
-        }
-        &::-webkit-scrollbar-thumb {
-          background-color: rgba(220, 224, 236, 0.5);
-          border-radius: 8px;
-        }
+        max-height: 128px;
       }
     }
     &__option {
+      padding-left: 24px;
       cursor: pointer;
       &--is-focused,
       &--is-selected {
-        background-color: #f9faff;
-        color: black;
+        background-color: var(--main-bg);
+        border-radius: 6px;
+        color: var(--title-color);
       }
       &:active {
-        background-color: #f9faff;
+        background-color: var(--main-bg);
         color: black;
       }
     }
@@ -51,13 +56,13 @@ const StyledSelect = styled(Select)`
       &--is-focused {
         box-shadow: none;
         &:hover {
-          border: 1px solid #7297ff;
+          border: 1px solid var(--input-accent);
         }
       }
       &--menu-is-open {
         svg {
           transform: rotate(-180deg);
-          color: #7297ff;
+          color: var(--input-accent);
         }
       }
       &:hover {

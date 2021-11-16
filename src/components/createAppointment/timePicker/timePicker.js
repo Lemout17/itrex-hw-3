@@ -31,7 +31,7 @@ const TimePicker = ({ onChangeTimeData }) => {
   }, [time])
 
   return (
-    <PickerWrapper>
+    <PickerWrapper timePicker>
       <Text before second>
         Select an available timeslot
       </Text>

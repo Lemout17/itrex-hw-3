@@ -1,5 +1,5 @@
-const getPatientsList = (state) => state.patients.patientsList
+const getDoctorsList = (state) => state.doctors.doctorsList
 
 export default {
-  getPatientsList,
+  getDoctorsList,
 }

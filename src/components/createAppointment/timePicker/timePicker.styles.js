@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 const Listing = styled.ul`
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
-  width: 464px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 `
 
 const Button = styled.button`
