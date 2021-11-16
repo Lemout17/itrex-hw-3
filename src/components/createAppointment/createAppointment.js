@@ -44,7 +44,6 @@ const CreateAppointment = ({ handleChangeComponent }) => {
   }
 
   const onSubmitAppointment = () => {
-    console.log('submited')
     const data = {
       id: nanoid(),
       name: formData.name,
