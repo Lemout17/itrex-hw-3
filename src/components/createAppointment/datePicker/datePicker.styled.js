@@ -6,14 +6,16 @@ export const StyledCalendar = styled(Calendar)`
     width: 100%;
     max-width: 400px;
     background: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Popins', sans-serif;
     line-height: 1.125em;
     border-radius: 12px;
     border: none;
-    padding: 0 32px 32px 32px;
+
+    &__tile {
+      outline: 1px solid red;
+    }
 
     button {
-      margin: 0;
       border: 0;
       outline: none;
 
@@ -21,6 +23,10 @@ export const StyledCalendar = styled(Calendar)`
         cursor: pointer;
       }
     }
+  }
+
+  .react-calendar__viewContainer {
+    padding: 0 32px 32px;
   }
 
   .react-calendar--doubleView {
@@ -49,6 +55,7 @@ export const StyledCalendar = styled(Calendar)`
   .react-calendar__navigation {
     display: flex;
     height: 88px;
+    padding: 0 32px;
     margin-bottom: 1em;
     border-bottom: 1px solid;
     border-color: rgba(220, 224, 236, 0.5);
@@ -76,6 +83,7 @@ export const StyledCalendar = styled(Calendar)`
   }
 
   .react-calendar__month-view__weekdays {
+    margin-bottom: 16px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -124,6 +132,12 @@ export const StyledCalendar = styled(Calendar)`
     padding: 0.75em 0.5em;
     background: none;
     border-radius: 12px;
+    margin-top: 8px;
+
+    &:nth-child(-n + 7) {
+      margin-top: 0;
+    }
+
     &:disabled {
       background-color: #f0f0f0;
     }

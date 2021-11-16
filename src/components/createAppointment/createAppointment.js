@@ -50,6 +50,7 @@ const CreateAppointment = ({ handleChangeComponent }) => {
       status: formData.status,
       date: `${dateData} ${timeData}`,
       description: formData.description,
+      note: formData.note,
     }
 
     dispatch(userActions.setDoctorsList(data))

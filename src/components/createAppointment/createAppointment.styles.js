@@ -90,10 +90,6 @@ const Text = styled.p`
     &::before {
       background-image: url(${posThreeSvg});
     }`}
-
-    @media screen and (min-width: 1441px) {
-    ${(props) => props.second && 'margin-left:50px;'}
-  }
 `
 
 export { TextWrapper, Link, ArrowSvg, PickerWrapper, Wrapper, Text }
