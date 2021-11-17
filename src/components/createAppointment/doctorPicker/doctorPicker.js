@@ -35,7 +35,6 @@ const DoctorPicker = ({ onChangeFormData }) => {
 
       onChangeFormData(data, 'formData')
     }
-    return
   }, [doctorName, occupation, doctor])
 
   return (

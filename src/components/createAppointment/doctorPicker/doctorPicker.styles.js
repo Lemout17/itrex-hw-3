@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import Select from 'react-select'
 
-const Form = styled.form``
-
 const StyledSelect = styled(Select)`
   & .Select {
     &__value-container {
@@ -21,7 +19,6 @@ const StyledSelect = styled(Select)`
     }
 
     &__menu {
-      overflow-y: scroll;
       padding: 4px;
       font-weight: 400;
       font-size: 15px;
@@ -91,4 +88,4 @@ const Label = styled.label`
   }
 `
 
-export { Form, Label, StyledSelect }
+export { Label, StyledSelect }

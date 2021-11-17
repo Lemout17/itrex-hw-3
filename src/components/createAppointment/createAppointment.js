@@ -56,7 +56,6 @@ const CreateAppointment = ({ toggleCreateAppointment }) => {
     if (dateData && timeData && formData?.name && formData?.status) {
       setDisabled(false)
     }
-    return
   }, [dateData, timeData, formData])
 
   return (

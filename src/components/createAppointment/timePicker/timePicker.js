@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { PickerWrapper } from '../createAppointment.styles'
 import { Text } from '../createAppointment.styles'
-import { Listing, ListItem } from '../timePicker/timePicker.styles'
+import { Listing, ListItem } from './timePicker.styles'
 
 const doctorsSchedule = [
   '12:00 am',
@@ -18,7 +18,6 @@ const doctorsSchedule = [
 
 const TimePicker = ({ onChangeTimeData }) => {
   const [time, setTime] = useState('')
-  const [active, setActive] = useState('')
 
   const handleClick = (e) => {
     if (e.target.nodeName !== 'BUTTON') {
@@ -26,7 +25,6 @@ const TimePicker = ({ onChangeTimeData }) => {
     }
 
     setTime(e.target.textContent)
-    setActive(e.target.textContent)
   }
 
   useEffect(() => {
