@@ -14,7 +14,7 @@ const user = { name: 'Larry Prinston', type: 'Patient' }
 const UserView = () => {
   const [appointment, setAppointment] = useState(false)
 
-  const handleChangeComponent = (value) => {
+  const toggleCreateAppointment = (value) => {
     setAppointment(value)
   }
 
@@ -28,9 +28,11 @@ const UserView = () => {
       <main>
         <Section doctor>
           {appointment ? (
-            <CreateAppointment handleChangeComponent={handleChangeComponent} />
+            <CreateAppointment
+              toggleCreateAppointment={toggleCreateAppointment}
+            />
           ) : (
-            <MainPatient handleChangeComponent={handleChangeComponent} />
+            <MainPatient toggleCreateAppointment={toggleCreateAppointment} />
           )}
         </Section>
       </main>

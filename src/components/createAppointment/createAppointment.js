@@ -3,19 +3,14 @@ import { useDispatch } from 'react-redux'
 import { MainWrapper, Text, Button } from '../mainDoctor/styles'
 import { nanoid } from '@reduxjs/toolkit'
 import Title from '../title/title'
-import {
-  Link,
-  TextWrapper,
-  ArrowSvg,
-  Wrapper,
-} from './createAppointment.styles'
+import { Link, TextWrapper, Wrapper } from './createAppointment.styles'
 import DatePicker from './datePicker/datePicker'
 import TimePicker from './timePicker/timePicker'
 import DoctorPicker from './doctorPicker/doctorPicker'
 
 import userActions from '../../redux/user/userActions'
 
-const CreateAppointment = ({ handleChangeComponent }) => {
+const CreateAppointment = ({ toggleCreateAppointment }) => {
   const [dateData, setDateData] = useState()
   const [timeData, setTimeData] = useState()
   const [formData, setFormData] = useState()
@@ -24,7 +19,7 @@ const CreateAppointment = ({ handleChangeComponent }) => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    handleChangeComponent(false)
+    toggleCreateAppointment(false)
   }
 
   const onChangeData = (data, name) => {
@@ -58,7 +53,7 @@ const CreateAppointment = ({ handleChangeComponent }) => {
   }
 
   useEffect(() => {
-    if (dateData && timeData && formData) {
+    if (dateData && timeData && formData?.name && formData?.status) {
       setDisabled(false)
     }
     return
@@ -68,7 +63,6 @@ const CreateAppointment = ({ handleChangeComponent }) => {
     <MainWrapper>
       <TextWrapper>
         <Link onClick={handleClick}>Doctor</Link>
-        <ArrowSvg></ArrowSvg>
         <Text desktop appointment>
           Make an appointment
         </Text>

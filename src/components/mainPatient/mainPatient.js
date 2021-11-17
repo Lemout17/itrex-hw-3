@@ -16,10 +16,11 @@ import Title from '../title/title'
 import AppointmentsList from './appointmentsList/appointmentsList'
 import EmptyState from '../mainDoctor/emptyState/emptyState'
 
-const MainPatient = ({ handleChangeComponent }) => {
+const MainPatient = ({ toggleCreateAppointment }) => {
   const data = useSelector(userSelector.getDoctorsList)
+
   const handleClick = () => {
-    handleChangeComponent(true)
+    toggleCreateAppointment(true)
   }
 
   return (

@@ -7,7 +7,7 @@ const Listing = styled.ul`
   gap: 16px;
 `
 
-const Button = styled.button`
+const ListItem = styled.button`
   width: 104px;
   padding: 8px 16px;
 
@@ -25,12 +25,14 @@ const Button = styled.button`
   ${(props) => props.disabled && 'background: var(--input-color);'}
   box-shadow: 0px 4px 32px rgba(218, 228, 255, 0.24);
 
+  cursor: pointer;
+
   &:focus {
     outline: 1px solid var(--input-accent);
     color: var(--input-accent);
   }
 
-  cursor: pointer;
+  ${(props) => props.checked === '' && 'color:red'}
 `
 
-export { Listing, Button }
+export { Listing, ListItem }

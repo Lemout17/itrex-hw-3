@@ -9,6 +9,12 @@ const TextWrapper = styled.div`
   align-items: center;
   width: 286px;
   margin-bottom: 72px;
+  outline: 1px solid red;
+
+  background-image: url(${arrowRightSvg});
+  background-position-y: center;
+  background-position-x: 64px;
+  background-repeat: no-repeat;
 `
 
 const Wrapper = styled.div`
@@ -22,14 +28,6 @@ const Link = styled.a`
   color: var(--input-accent);
 
   cursor: pointer;
-`
-
-const ArrowSvg = styled.div`
-  padding: 12px;
-  margin: 0 8px;
-  background-image: url(${arrowRightSvg});
-  background-position: center;
-  background-repeat: no-repeat;
 `
 
 const PickerWrapper = styled.div`
@@ -93,4 +91,4 @@ const Text = styled.p`
     }`}
 `
 
-export { TextWrapper, Link, ArrowSvg, PickerWrapper, Wrapper, Text }
+export { TextWrapper, Link, PickerWrapper, Wrapper, Text }

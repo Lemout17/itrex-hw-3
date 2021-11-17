@@ -10,6 +10,8 @@ const Listing = styled.ul`
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(406px, 1fr));
+    height: 696px;
+    overflow-y: scroll;
   }
 `
 

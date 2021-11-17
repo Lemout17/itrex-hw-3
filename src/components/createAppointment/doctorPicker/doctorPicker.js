@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import userSelector from '../../../redux/user/userSelector'
 import { Text, PickerWrapper } from '../createAppointment.styles'
 import { Input } from '../../form/styles'
 import { Label, StyledSelect } from './doctorPicker.styles'
@@ -27,16 +25,17 @@ const DoctorPicker = ({ onChangeFormData }) => {
   }
 
   useEffect(() => {
-    if (!doctorName && !occupation) return
+    if (doctorName && occupation) {
+      const data = {
+        name: doctorName.value,
+        status: occupation.value,
+        description: doctor.description,
+        note: doctor.note,
+      }
 
-    const data = {
-      name: doctorName.value,
-      status: occupation.value,
-      description: doctor.description,
-      note: doctor.note,
+      onChangeFormData(data, 'formData')
     }
-
-    onChangeFormData(data, 'formData')
+    return
   }, [doctorName, occupation, doctor])
 
   return (

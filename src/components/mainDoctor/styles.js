@@ -208,7 +208,8 @@ const Text = styled.p`
   color: var(--text-color);
 
   @media screen and (min-width: 1280px) {
-    ${(props) => props.appointment && 'font-size: 17px;'}
+    ${(props) =>
+      props.appointment && 'margin-left:40px;font-size: 17px; text-align:left;'}
   }
 `
 

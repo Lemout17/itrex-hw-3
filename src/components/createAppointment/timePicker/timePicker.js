@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { PickerWrapper } from '../createAppointment.styles'
 import { Text } from '../createAppointment.styles'
-import { Listing, Button } from '../timePicker/timePicker.styles'
+import { Listing, ListItem } from '../timePicker/timePicker.styles'
 
-const data = [
+const doctorsSchedule = [
   '12:00 am',
   '1:00 pm',
   '2:00 pm',
@@ -18,6 +18,7 @@ const data = [
 
 const TimePicker = ({ onChangeTimeData }) => {
   const [time, setTime] = useState('')
+  const [active, setActive] = useState('')
 
   const handleClick = (e) => {
     if (e.target.nodeName !== 'BUTTON') {
@@ -25,6 +26,7 @@ const TimePicker = ({ onChangeTimeData }) => {
     }
 
     setTime(e.target.textContent)
+    setActive(e.target.textContent)
   }
 
   useEffect(() => {
@@ -37,10 +39,8 @@ const TimePicker = ({ onChangeTimeData }) => {
         Select an available timeslot
       </Text>
       <Listing onClick={handleClick}>
-        {data.map((item) => (
-          <li key={item}>
-            <Button>{item}</Button>
-          </li>
+        {doctorsSchedule.map((item) => (
+          <ListItem key={item}>{item}</ListItem>
         ))}
       </Listing>
     </PickerWrapper>
