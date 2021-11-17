@@ -59,7 +59,7 @@ const Button = styled.button`
     width: 160px;
     ${(props) =>
       props.appointment &&
-      'margin-left: auto; margin-top:39px; height: 56px;font-size: 17px; line-height: 1.4;'}
+      'margin-left: auto; margin-top:80px; height: 56px;font-size: 17px; line-height: 1.4;'}
 
     &:first-child {
       margin-right: 12px;

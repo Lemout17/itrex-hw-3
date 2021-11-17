@@ -56,6 +56,7 @@ const Text = styled.p`
   position: relative;
   padding-left: 40px;
   margin-bottom: 40px;
+  ${(props) => props.third && 'margin-bottom: 32px;'}
   font-weight: 400;
   font-size: 17px;
   line-height: 1.4;

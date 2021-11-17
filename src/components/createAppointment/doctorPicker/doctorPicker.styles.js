@@ -85,6 +85,10 @@ const Label = styled.label`
   font-size: 13px;
   line-height: 1.3;
   color: var(--title-color);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 export { Form, Label, StyledSelect }
