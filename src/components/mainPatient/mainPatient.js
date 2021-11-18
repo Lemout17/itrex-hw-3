@@ -1,4 +1,9 @@
-import { useSelector } from 'react-redux'
+import useStoreMiddleware from '../../redux/useStoreMiddleware'
+
+import AppointmentsList from './appointmentsList/appointmentsList'
+import EmptyState from '../mainDoctor/emptyState/emptyState'
+import Title from '../title/title'
+
 import {
   MainWrapper,
   ButtonWrapper,
@@ -9,14 +14,9 @@ import {
   Selector,
   Text,
 } from '../mainDoctor/styles'
-import userSelector from '../../redux/user/userSelector'
-
-import Title from '../title/title'
-import AppointmentsList from './appointmentsList/appointmentsList'
-import EmptyState from '../mainDoctor/emptyState/emptyState'
 
 const MainPatient = ({ toggleCreateAppointment }) => {
-  const data = useSelector(userSelector.getDoctorsList)
+  const { appointments } = useStoreMiddleware()
 
   const handleClick = () => {
     toggleCreateAppointment(true)
@@ -44,7 +44,11 @@ const MainPatient = ({ toggleCreateAppointment }) => {
         </Button>
       </FilterWrapper>
 
-      {!data.length ? <EmptyState /> : <AppointmentsList data={data} />}
+      {!appointments.length ? (
+        <EmptyState />
+      ) : (
+        <AppointmentsList data={appointments} />
+      )}
     </MainWrapper>
   )
 }

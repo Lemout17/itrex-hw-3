@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { MainWrapper, Text, Button } from '../mainDoctor/styles'
 import { nanoid } from '@reduxjs/toolkit'
-import Title from '../title/title'
-import { Link, TextWrapper, Wrapper } from './createAppointment.styles'
+import useStoreMiddleware from '../../redux/useStoreMiddleware'
+
 import DatePicker from './datePicker/datePicker'
 import TimePicker from './timePicker/timePicker'
 import DoctorPicker from './doctorPicker/doctorPicker'
 
-import userActions from '../../redux/user/userActions'
+import { MainWrapper, Text, Button } from '../mainDoctor/styles'
+import Title from '../title/title'
+import { Link, TextWrapper, Wrapper } from './createAppointment.styles'
 
 const CreateAppointment = ({ toggleCreateAppointment }) => {
   const [dateData, setDateData] = useState()
@@ -16,7 +16,7 @@ const CreateAppointment = ({ toggleCreateAppointment }) => {
   const [formData, setFormData] = useState()
   const [disabled, setDisabled] = useState(true)
 
-  const dispatch = useDispatch()
+  const { addAppointment } = useStoreMiddleware()
 
   const handleClick = () => {
     toggleCreateAppointment(false)
@@ -48,7 +48,7 @@ const CreateAppointment = ({ toggleCreateAppointment }) => {
       note: formData.note,
     }
 
-    dispatch(userActions.setDoctorsList(data))
+    addAppointment(data)
     handleClick()
   }
 

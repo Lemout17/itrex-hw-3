@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import { Route, Redirect } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import authSelectors from '../redux/auth/authSelectors'
+import useStoreMiddleware from '../redux/useStoreMiddleware'
 
 export default function PublicRoute({
   isAuthenticated,
@@ -9,11 +8,11 @@ export default function PublicRoute({
   children,
   ...routeProps
 }) {
-  const isLoggedIn = useSelector(authSelectors.getIsAuthenticated)
+  const { isLogged } = useStoreMiddleware()
 
   return (
     <Route {...routeProps}>
-      {isLoggedIn && routeProps.restricted ? (
+      {isLogged && routeProps.restricted ? (
         <Redirect to={redirectTo} />
       ) : (
         children
