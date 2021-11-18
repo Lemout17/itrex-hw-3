@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import authReducer from './auth/authReducer'
+import userReducer from './user/userReducer'
 
 const authPersistConfig = {
   key: 'auth',
@@ -9,9 +10,15 @@ const authPersistConfig = {
   whitelist: ['token'],
 }
 
+const doctorsListPersistConfig = {
+  key: 'doctors',
+  storage,
+}
+
 const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    doctors: persistReducer(doctorsListPersistConfig, userReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

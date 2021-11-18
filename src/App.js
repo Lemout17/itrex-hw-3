@@ -52,7 +52,7 @@ function App() {
           <PublicRoute
             path={routes.signinPage}
             restricted
-            redirectTo={routes.doctorPage}
+            redirectTo={routes.patientPage}
             component={SignInView}
           />
           <PublicRoute

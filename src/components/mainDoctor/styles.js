@@ -45,6 +45,8 @@ const Button = styled.button`
   border: none;
   border-radius: 8px;
   background-color: var(--input-accent);
+  ${(props) =>
+    props.disabled === true && 'background-color:var(--input-color);'}
   ${(props) => props.white && 'background-color:var(--white-color);'}
 
   cursor: pointer;
@@ -55,6 +57,9 @@ const Button = styled.button`
 
   @media screen and (min-width: 768px) {
     width: 160px;
+    ${(props) =>
+      props.appointment &&
+      'margin-left: auto; margin-top:80px; height: 56px;font-size: 17px; line-height: 1.4;'}
 
     &:first-child {
       margin-right: 12px;
@@ -197,10 +202,15 @@ const Text = styled.p`
   width: 240px;
   ${(props) => props.desktop && 'width: 100%;'}
   text-align: center;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 15px;
   line-height: 1.4;
   color: var(--text-color);
+
+  @media screen and (min-width: 1280px) {
+    ${(props) =>
+      props.appointment && 'margin-left:40px;font-size: 17px; text-align:left;'}
+  }
 `
 
 export {

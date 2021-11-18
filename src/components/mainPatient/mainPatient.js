@@ -1,4 +1,9 @@
-import { useState } from 'react'
+import useStoreMiddleware from '../../redux/useStoreMiddleware'
+
+import AppointmentsList from './appointmentsList/appointmentsList'
+import EmptyState from '../mainDoctor/emptyState/emptyState'
+import Title from '../title/title'
+
 import {
   MainWrapper,
   ButtonWrapper,
@@ -10,14 +15,12 @@ import {
   Text,
 } from '../mainDoctor/styles'
 
-import Title from '../title/title'
-import AppointmentsList from './appointmentsList/appointmentsList'
-import EmptyState from '../mainDoctor/emptyState/emptyState'
+const MainPatient = ({ toggleCreateAppointment }) => {
+  const { appointments } = useStoreMiddleware()
 
-import data from './db.json'
-
-const MainPatient = () => {
-  const [state, setstate] = useState([data])
+  const handleClick = () => {
+    toggleCreateAppointment(true)
+  }
 
   return (
     <MainWrapper>
@@ -36,12 +39,16 @@ const MainPatient = () => {
           <Text desktop>Show:</Text>
           <Selector>Upcoming</Selector>
         </SelectorWrapper>
-        <Button patient desktop>
+        <Button patient desktop onClick={handleClick}>
           Create an appointment
         </Button>
       </FilterWrapper>
 
-      {!state.length ? <EmptyState /> : <AppointmentsList data={state} />}
+      {!appointments.length ? (
+        <EmptyState />
+      ) : (
+        <AppointmentsList data={appointments} />
+      )}
     </MainWrapper>
   )
 }

@@ -1,15 +1,23 @@
+import { useState } from 'react'
 import Header from '../../components/header/header'
 import Section from '../../components/containers/section/section'
 import Logo from '../../components/header/logo/logo'
 import UserName from '../../components/header/userName/userName'
 import UserAvatar from '../../components/header/userAvatar/userAvatar'
 import MainPatient from '../../components/mainPatient/mainPatient'
+import CreateAppointment from '../../components/createAppointment/createAppointment'
 
 import patientImg from '../../img/doctor-page/user.png'
 
 const user = { name: 'Larry Prinston', type: 'Patient' }
 
 const UserView = () => {
+  const [appointment, setAppointment] = useState(false)
+
+  const toggleCreateAppointment = (value) => {
+    setAppointment(value)
+  }
+
   return (
     <>
       <Header>
@@ -19,7 +27,13 @@ const UserView = () => {
       </Header>
       <main>
         <Section doctor>
-          <MainPatient />
+          {appointment ? (
+            <CreateAppointment
+              toggleCreateAppointment={toggleCreateAppointment}
+            />
+          ) : (
+            <MainPatient toggleCreateAppointment={toggleCreateAppointment} />
+          )}
         </Section>
       </main>
     </>

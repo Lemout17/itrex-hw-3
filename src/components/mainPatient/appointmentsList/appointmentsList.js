@@ -17,7 +17,7 @@ import {
 const AppointmentsList = ({ data }) => {
   return (
     <Listing>
-      {data[0].map(({ id, name, status, date, description }) => (
+      {data.map(({ id, name, status, date, description }) => (
         <Card patient key={id}>
           <CardHeader>
             <CardAvatar />
