@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useStoreMiddleware from '../../../redux/useStoreMiddleware'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { useFormik } from 'formik'
@@ -25,6 +26,8 @@ const SignInForm = () => {
 
   const dispatch = useDispatch()
 
+  const { loginUser } = useStoreMiddleware()
+
   const handleToggle = (e) => {
     if (e.target.id === 'togglePass') {
       setTogglePass(!togglePass)
@@ -35,11 +38,11 @@ const SignInForm = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: '',
+      userName: '',
       password: '',
     },
     validationSchema: Yup.object({
-      email: Yup.string()
+      userName: Yup.string()
         .email('Invalid email address')
         .required('Please enter your email address'),
       password: Yup.string()
@@ -49,7 +52,10 @@ const SignInForm = () => {
           'Must contain 8 characters,at least one letter and one number'
         ),
     }),
-    onSubmit: () => dispatch(authActions.registerSuccess()),
+    onSubmit: (value) => {
+      console.log(value)
+      loginUser(value)
+    },
   })
 
   return (
@@ -61,20 +67,22 @@ const SignInForm = () => {
           <Wrapper
             login
             status={
-              formik.touched.email && formik.errors.email ? 'error' : 'normal'
+              formik.touched.userName && formik.errors.userName
+                ? 'error'
+                : 'normal'
             }
           >
             <Input
-              id="email"
-              name="email"
+              id="userName"
+              name="userName"
               type="email"
               placeholder="Email"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.email}
+              value={formik.values.userName}
             />
-            {formik.touched.email && formik.errors.email ? (
-              <ErrorText>{formik.errors.email}</ErrorText>
+            {formik.touched.userName && formik.errors.userName ? (
+              <ErrorText>{formik.errors.userName}</ErrorText>
             ) : null}
           </Wrapper>
 

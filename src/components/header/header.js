@@ -1,25 +1,21 @@
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import Logo from './logo/logo'
+import UserName from './userName/userName'
+import UserAvatar from './userAvatar/userAvatar'
 
-const HeaderWrapper = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 72px;
-  padding: 16px 24px;
+import { HeaderWrapper } from './header.styles'
 
-  @media screen and (min-width: 768px) {
-    padding: 20px 64px;
-  }
-`
+import patientImg from '../../img/doctor-page/user.png'
 
-const Header = ({ children }) => {
-  return <HeaderWrapper>{children}</HeaderWrapper>
-}
+const user = { name: 'Larry Prinston', type: 'Patient' }
 
-Header.propTypes = {
-  children: PropTypes.node.isRequired,
+const Header = () => {
+  return (
+    <HeaderWrapper>
+      <Logo />
+      <UserName user={user} />
+      <UserAvatar avatar={patientImg} />
+    </HeaderWrapper>
+  )
 }
 
 export default Header

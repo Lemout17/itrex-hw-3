@@ -4,12 +4,20 @@ import userSelector from './user/userSelector'
 import authSelectors from './auth/authSelectors'
 
 import userActions from '../redux/user/userActions'
+import authOperations from './auth/authOperations'
 
 function useStoreMiddleware() {
   const dispatch = useDispatch()
   const addAppointment = useCallback(
     (data) => {
       dispatch(userActions.setDoctorsList(data))
+    },
+    [dispatch]
+  )
+
+  const loginUser = useCallback(
+    (data) => {
+      dispatch(authOperations.logIn(data))
     },
     [dispatch]
   )
@@ -22,6 +30,7 @@ function useStoreMiddleware() {
     addAppointment,
     appointments,
     isLogged,
+    loginUser,
   }
 }
 

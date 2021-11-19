@@ -29,7 +29,7 @@ const Card = styled.li`
   }
 
   @media screen and (min-width: 768px) {
-    height: auto;
+    min-height: 264px;
   }
 
   @media screen and (min-width: 1280px) {

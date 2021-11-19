@@ -10,15 +10,10 @@ const authPersistConfig = {
   whitelist: ['token'],
 }
 
-const doctorsListPersistConfig = {
-  key: 'doctors',
-  storage,
-}
-
 const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    doctors: persistReducer(doctorsListPersistConfig, userReducer),
+    doctors: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
