@@ -21,7 +21,7 @@ const AvatarOnline = styled.div`
 const UserAvatar = ({ avatar }) => {
   return (
     <AvatarWrapper>
-      <img src={avatar} alt="doctor" />
+      <img src={avatar.photo} alt="doctor" />
       <AvatarOnline />
     </AvatarWrapper>
   )

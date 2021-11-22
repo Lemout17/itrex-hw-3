@@ -3,8 +3,10 @@ import { UserWrapper, Text, SubText } from './userName.styles'
 const UserName = ({ user }) => {
   return (
     <UserWrapper>
-      <Text>{user.name}</Text>
-      <SubText>{user.type}</SubText>
+      <Text>
+        {user.first_name} {user.last_name}
+      </Text>
+      <SubText>{user.role_name}</SubText>
     </UserWrapper>
   )
 }

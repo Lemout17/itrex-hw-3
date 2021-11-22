@@ -14,10 +14,8 @@ import {
   Selector,
 } from './styles'
 
-import data from './db.json'
-
 const MainDoctor = () => {
-  const [state, setstate] = useState([data])
+  const [state, setState] = useState([])
   return (
     <MainWrapper>
       <ButtonWrapper>

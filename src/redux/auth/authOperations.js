@@ -24,7 +24,6 @@ const logIn = (credentials) => async (dispatch) => {
     dispatch(authActions.loginSuccess(data))
 
     const response = await axios.get('/api/auth/profile')
-    console.log('userProfile', response.data)
 
     dispatch(authActions.getUserProfileSuccess(response.data))
   } catch (error) {

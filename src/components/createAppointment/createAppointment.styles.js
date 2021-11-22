@@ -9,7 +9,6 @@ const TextWrapper = styled.div`
   align-items: center;
   width: 286px;
   margin-bottom: 72px;
-  outline: 1px solid red;
 
   background-image: url(${arrowRightSvg});
   background-position-y: center;

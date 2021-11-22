@@ -2,6 +2,8 @@ import { Suspense, lazy } from 'react'
 import { Switch } from 'react-router-dom'
 import routes from './routes/routes'
 
+import useStoreMiddleware from './redux/useStoreMiddleware'
+
 import PublicRoute from './routes/publicRoute'
 import PrivateRoute from './routes/privateRoute'
 
@@ -38,6 +40,17 @@ const PatientView = lazy(() =>
 )
 
 function App() {
+  const { userProfile } = useStoreMiddleware()
+
+  console.log('Render')
+
+  if (!userProfile) {
+    return <div />
+  }
+
+  const userPage =
+    userProfile.role_name === 'Patient' ? routes.patientPage : routes.doctorPage
+
   return (
     <>
       <Suspense fallback={<Loader />}>
@@ -52,7 +65,7 @@ function App() {
           <PublicRoute
             path={routes.signinPage}
             restricted
-            redirectTo={routes.patientPage}
+            redirectTo={userPage}
             component={SignInView}
           />
           <PublicRoute

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import useStoreMiddleware from '../../../redux/useStoreMiddleware'
-import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -19,12 +18,9 @@ import {
 } from '../styles'
 
 import routes from '../../../routes/routes'
-import authActions from '../../../redux/auth/authActions'
 
 const SignInForm = () => {
   const [togglePass, setTogglePass] = useState(false)
-
-  const dispatch = useDispatch()
 
   const { loginUser } = useStoreMiddleware()
 
@@ -53,7 +49,6 @@ const SignInForm = () => {
         ),
     }),
     onSubmit: (value) => {
-      console.log(value)
       loginUser(value)
     },
   })

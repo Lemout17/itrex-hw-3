@@ -8,6 +8,7 @@ import authOperations from './auth/authOperations'
 
 function useStoreMiddleware() {
   const dispatch = useDispatch()
+  
   const addAppointment = useCallback(
     (data) => {
       dispatch(userActions.setDoctorsList(data))
@@ -24,6 +25,8 @@ function useStoreMiddleware() {
 
   const appointments = useSelector(userSelector.getDoctorsList)
 
+  const userProfile = useSelector(authSelectors.getUserProfile)
+
   const isLogged = useSelector(authSelectors.getIsAuthenticated)
 
   return {
@@ -31,6 +34,7 @@ function useStoreMiddleware() {
     appointments,
     isLogged,
     loginUser,
+    userProfile,
   }
 }
 
